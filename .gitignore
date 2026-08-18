@@ -1,0 +1,17 @@
+# Confidential — never push to GitHub (Google Drive + LMS only)
+assessment/
+
+# Large source references (copyrighted study guides + 200MB master deck) — local only
+reference/
+
+# OS / tooling junk
+.DS_Store
+**/.DS_Store
+courseare/
+
+# Distribution archives (rebuildable — never pushed to GitHub)
+*.zip
+**/reference/
+
+# Build toolchain (skills, hooks, push scripts) — local only, not part of the published course
+.claude/
