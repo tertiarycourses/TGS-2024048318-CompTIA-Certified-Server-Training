@@ -118,13 +118,17 @@ Full inventory: [labs/tools.md](labs/tools.md).
 
 ```
 .
-├── README.md                                  ← this course landing page
-├── CompTIA Certified Server Plus Training-v4.1.pptx / .pdf   ← trainer slide deck
-├── LP-CompTIA Certified Server Plus Training.docx / .pdf     ← Lesson Plan
-├── LG-CompTIA Certified Server Plus Training.docx / .pdf     ← Learner Guide
-├── LG-CompTIA Certified Server Plus Training.md              ← Learner Guide (Markdown mirror)
-├── comptiaserverplus.pdf                      ← official SK0-005 exam blueprint
-└── labs/                                       ← 33 hands-on labs (one file each) + index + tools
+├── README.md                                   ← this course landing page
+├── courseware/                                 ← trainer slide deck, Lesson Plan & Learner Guide
+│   ├── CompTIA Certified Server Plus Training-v4.1.pptx / .pdf   ← trainer slide deck
+│   ├── LP-CompTIA Certified Server Plus Training.docx / .pdf     ← Lesson Plan
+│   ├── LG-CompTIA Certified Server Plus Training.docx / .pdf     ← Learner Guide
+│   └── LG-CompTIA Certified Server Plus Training.md              ← Learner Guide (Markdown mirror)
+├── comptiaserverplus.pdf                       ← official SK0-005 exam blueprint
+└── labs/                                        ← 33 hands-on labs, each in its own folder
+    └── lab-NN-<slug>/                           ← guide (.md) + guidelines/cheatsheet/worksheet PDFs
+        ├── data/                                ← CSV + Excel mock data (data-bearing labs)
+        └── assets/ · scripts/                   ← Dockerfiles, Kubernetes YAML, shell scripts
 ```
 
 > **Note:** the confidential `assessment/` folder (question papers + answer keys) is **not** part of this repository — it is distributed only via the LMS and Google Drive.
