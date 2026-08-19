@@ -1,0 +1,10 @@
+Name,Type,Value,TTL
+lab.local.,SOA,ns1.lab.local. admin.lab.local.,604800
+lab.local.,NS,ns1.lab.local.,604800
+ns1.lab.local.,A,10.99.99.10,604800
+web.lab.local.,A,10.99.99.20,604800
+db.lab.local.,A,10.99.99.30,604800
+app.lab.local.,A,10.99.99.50,604800
+www.lab.local.,CNAME,web.lab.local.,604800
+mail.lab.local.,MX,10 web.lab.local.,604800
+20.99.99.10.in-addr.arpa.,PTR,web.lab.local.,604800

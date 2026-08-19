@@ -1,0 +1,12 @@
+Model,Billed_On,Physical_or_Virtual,Example_Product
+Per-instance,Each running OS/app instance,Both,Antivirus agent
+Per-core,Physical cores,Physical,SQL Server Enterprise
+Per-socket,Populated CPU sockets,Physical,VMware vSphere
+Per-user,Named users,Both,Microsoft 365
+Per-concurrent-user,Max simultaneous users,Both,CAD floating licence
+Per-server,Physical or virtual server,Both,Windows Server
+Subscription,Recurring fee incl. updates,Both,Red Hat RHEL
+Volume,Bulk pre-purchase,Both,Windows VL / MAK
+Site-based,Whole site unlimited,Both,Site OSS support
+Node-locked,Bound to a machine ID,Physical,Oracle named host
+Open source,No cost; OSS obligations,Both,nginx / MariaDB

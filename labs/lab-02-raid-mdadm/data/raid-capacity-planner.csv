@@ -1,0 +1,14 @@
+RAID_Level,Num_Disks,Disk_Size_GB,Usable_GB,Fault_Tolerance
+0,2,1000,2000,0 disks
+0,4,1000,4000,0 disks
+1,2,1000,1000,1 disk
+1,2,2000,2000,1 disk
+5,3,1000,2000,1 disk
+5,5,1000,4000,1 disk
+6,4,1000,2000,2 disks
+6,6,2000,8000,2 disks
+6,8,4000,24000,2 disks
+10,4,1000,2000,1 per mirror
+10,6,2000,6000,1 per mirror
+10,8,4000,16000,1 per mirror
+JBOD,2,1000,2000,0 disks

@@ -1,0 +1,9 @@
+System,Priority,RPO,RTO,Replication_Method,Failover_Step
+App database (primary),1 Critical,0,15 min,Sync (DRBD),Promote DR replica to primary
+Web front-end,2 High,5 min,30 min,lsyncd near-real-time,"Start nginx at DR, join LB"
+App tier,2 High,5 min,30 min,lsyncd near-real-time,Start app service at DR
+DNS / VIP,1 Critical,0,5 min,keepalived VRRP,DR gratuitous-ARP takes VIP
+File share,3 Medium,1 hour,2 hours,Async rsync (cron),"Mount DR share, re-export"
+Directory (LDAP),2 High,15 min,1 hour,syncrepl,Promote DR consumer
+Monitoring/SIEM,4 Low,24 hours,4 hours,Nightly rsync to cloud,Restore from cloud copy
+Batch / reporting,4 Low,24 hours,8 hours,Tape off-site weekly,Restore from off-site tape

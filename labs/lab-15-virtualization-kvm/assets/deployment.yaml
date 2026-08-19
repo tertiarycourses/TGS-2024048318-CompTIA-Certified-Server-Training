@@ -1,0 +1,43 @@
+# deployment.yaml — Lab 15, Virtualization.
+# Kubernetes runs and schedules containers across a cluster — the orchestration
+# layer above single-host virtualization. Apply on the Killercoda Kubernetes
+# playground (https://killercoda.com/playgrounds/scenario/kubernetes):
+#   kubectl apply -f deployment.yaml
+#   kubectl get pods -o wide
+#   kubectl scale deployment serverplus-app --replicas=4
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: serverplus-app
+  labels:
+    app: serverplus-app
+    course: tgs-2024048318
+spec:
+  replicas: 2                      # 2 pod copies — self-healing + scalable
+  selector:
+    matchLabels:
+      app: serverplus-app
+  template:
+    metadata:
+      labels:
+        app: serverplus-app
+    spec:
+      containers:
+        - name: app
+          image: python:3.12-slim
+          command: ["python", "-m", "http.server", "8000"]
+          ports:
+            - containerPort: 8000
+          resources:            # resource allocation, as in a hypervisor
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8000
+            initialDelaySeconds: 3
+            periodSeconds: 10

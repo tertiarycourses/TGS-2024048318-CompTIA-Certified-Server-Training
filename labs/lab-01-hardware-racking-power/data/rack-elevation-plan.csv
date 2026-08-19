@@ -1,0 +1,11 @@
+U_Position,Device,RU,Watts,Weight_kg
+42,KVM console 1U,1,30,6
+40-41,ToR switch A/B,2,500,12
+36-39,2U compute node 1-2,4,900,40
+28-35,1U compute node x8,8,3600,80
+24-27,1U compute node x4,4,1800,40
+21-23,3U app server,3,700,34
+19-20,2U UPS,2,0,48
+17-18,PDU A/B (0U side-mount),0,0,10
+9-16,4U JBOD shelf x2,8,1400,120
+1-8,4U storage array (heaviest),8,1600,150

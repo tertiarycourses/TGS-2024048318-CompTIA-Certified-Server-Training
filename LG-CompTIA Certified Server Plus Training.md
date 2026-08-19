@@ -1,6 +1,6 @@
 # CompTIA Certified Server+ Training — Learner Guide
 
-**WSQ Course Code:** TGS-2024048318  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v4.0 · 19 August 2026**
+**WSQ Course Code:** TGS-2024048318  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v4.1 · 19 August 2026**
 
 ## Document Version Control Record
 
@@ -8,6 +8,7 @@
 |---|---|---|---|
 | 3.0 | 1 May 2025 | Previous release — CompTIA Certified Server+ (SK0-005) master trainer slides and learner guide. | Tertiary Infotech Academy |
 | 4.0 | 19 August 2026 | Rebuilt courseware from the single-source pipeline: Learner Guide with step-by-step guides for all 33 hands-on Killercoda labs across the four SK0-005 exam domains (18/30/24/28%), plus an Exam Focus section on RAID formulas, subnetting, security and the troubleshooting methodology. | Dr Alfred Ang |
+| 4.1 | 19 August 2026 | Restructured each lab into its own folder with guidelines/cheatsheet/worksheet PDFs and CSV+Excel mock data; added Linux/Kubernetes/Docker lab environments and bonus container/Kubernetes assets. | Dr Alfred Ang |
 
 ## Contents
 
@@ -73,10 +74,21 @@ Use this guide alongside the course slides and the lab files in the labs/ folder
 
 ## Before You Start — Environment Setup
 
+**Lab environments**
+
+The 33 core labs run on the free Killercoda Ubuntu (Linux) playground. A few labs also ship bonus container and Kubernetes assets that run on Docker Desktop or the Killercoda Kubernetes playground:
+
+- Linux (all core labs) — Killercoda Ubuntu playground: https://killercoda.com/playgrounds/scenario/ubuntu
+- Kubernetes (bonus assets, Labs 14 & 15) — Killercoda Kubernetes playground: https://killercoda.com/playgrounds/scenario/kubernetes
+- Docker (bonus assets, Labs 10 & 15) — Docker Desktop: https://www.docker.com/products/docker-desktop/
+
+Each lab is its own folder in labs/ (e.g. labs/lab-02-raid-mdadm/) containing the guide (.md), a printable guidelines PDF, a cheatsheet PDF and a fill-in worksheet PDF, plus CSV+Excel mock data for data-bearing labs and Dockerfiles / Kubernetes YAML / shell scripts where relevant.
+
 **What you need**
 
-- A web browser — every lab runs on the free Killercoda Ubuntu playground: https://killercoda.com/playgrounds/scenario/ubuntu
+- A web browser — every core lab runs on the free Killercoda Ubuntu playground: https://killercoda.com/playgrounds/scenario/ubuntu
 - No local install or physical hardware is required. Each package is pulled with apt (or a single binary download) inside the throw-away VM.
+- For the bonus container labs: Docker Desktop (https://www.docker.com/products/docker-desktop/) and the Killercoda Kubernetes playground.
 - Reset the playground between labs that change storage, firewall, RAID or service state, so each lab starts clean.
 - Optional free online helpers: the IP Calculator (https://alfredang.github.io/ipcalculator/) for subnet planning, and the SSL Labs test for TLS posture.
 

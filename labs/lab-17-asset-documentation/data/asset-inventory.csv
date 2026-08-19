@@ -1,0 +1,9 @@
+asset_tag,make,model,serial,role,lifecycle_stage,warranty_end
+SRV01-2024,Dell,PowerEdge R650,DL7KX21,Web,Usage,2027-06-30
+SRV02-2024,Dell,PowerEdge R650,DL7KX22,Database,Usage,2027-06-30
+SRV03-2023,HPE,ProLiant DL380 Gen10,HP9QW44,File,Usage,2026-11-15
+SRV04-2022,Lenovo,ThinkSystem SR630,LN3RT08,App,Usage,2025-09-01
+SRV05-2021,Supermicro,SYS-1029U,SM5YU19,Backup,End of life,2024-12-31
+STG01-2023,Dell,PowerVault ME5,DLME512,Storage,Usage,2028-02-28
+NET01-2024,Cisco,Catalyst 9300,CS93K01,ToR switch,Deployment,2029-01-31
+SRV06-2020,HPE,ProLiant DL360 Gen9,HP8AA10,Legacy web,Disposal,2023-08-01

@@ -1,0 +1,10 @@
+Host,IP,Mask_CIDR,Gateway,VLAN,Role
+gw-core,10.99.99.1,/24,-,99,Default gateway
+ns1,10.99.99.10,/24,10.99.99.1,99,DNS server
+web01,10.99.99.20,/24,10.99.99.1,99,Web server
+db01,10.99.99.30,/24,10.99.99.1,99,Database server
+app01,10.99.99.50,/24,10.99.99.1,99,App server
+dhcp-pool-lo,10.99.99.100,/24,10.99.99.1,99,DHCP pool start
+dhcp-pool-hi,10.99.99.200,/24,10.99.99.1,99,DHCP pool end
+voip01,192.168.20.10,/24,192.168.20.1,20,Voice VLAN host
+mgmt01,172.16.0.10,/24,172.16.0.1,10,OOB management

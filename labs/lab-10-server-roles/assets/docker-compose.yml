@@ -1,0 +1,38 @@
+# docker-compose.yml — Lab 10, Server Roles (multi-role stack in containers).
+# Stands up the same Web + File + Database roles from this lab as containers.
+# Run with Docker Desktop:  docker compose up -d
+# Stop:                     docker compose down
+services:
+
+  web:                       # Web role (nginx)
+    build: .
+    image: serverplus-web
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:                        # Database role (MariaDB)
+    image: mariadb:11
+    environment:
+      MARIADB_ROOT_PASSWORD: change_me_in_lab
+      MARIADB_DATABASE: appdb
+      MARIADB_USER: appuser
+      MARIADB_PASSWORD: change_me_in_lab
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: unless-stopped
+
+  file:                      # File role (Samba/SMB share)
+    image: dperson/samba
+    command: -s "share;/share;yes;no;no;all"
+    ports:
+      - "1445:445"
+    volumes:
+      - file_data:/share
+    restart: unless-stopped
+
+volumes:
+  db_data:
+  file_data:

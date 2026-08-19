@@ -1,0 +1,10 @@
+Dataset,Type,Frequency,Retention,RPO,RTO
+OS / system-state,Full,Weekly (Sun 01:00),4 weeks,7 days,4 hours
+Web docroot,Incremental,Daily (02:00),14 days,24 hours,2 hours
+App database,Full,Daily (03:00),30 days,24 hours,1 hour
+App database,Differential,6-hourly,7 days,6 hours,1 hour
+File share,Incremental,Daily (02:30),30 days,24 hours,4 hours
+File share,Full,Monthly (1st 01:00),12 months,30 days,8 hours
+Config / IaC repo,Snapshot,On change,90 days,0,30 min
+Logs / SIEM,Incremental,Daily (04:00),1 year,24 hours,8 hours
+Off-site copy,Synthetic full,Weekly (Sat 22:00),12 weeks,7 days,12 hours

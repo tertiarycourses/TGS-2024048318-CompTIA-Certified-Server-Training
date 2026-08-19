@@ -1,0 +1,19 @@
+# service.yaml — Lab 15, Virtualization.
+# A Service gives the pods a stable address and load-balances across them,
+# even though individual pod IPs change on restart/scale.
+#   kubectl apply -f service.yaml
+#   kubectl get svc serverplus-app
+apiVersion: v1
+kind: Service
+metadata:
+  name: serverplus-app
+  labels:
+    app: serverplus-app
+spec:
+  type: NodePort            # exposes the app on a port of every cluster node
+  selector:
+    app: serverplus-app     # routes to the Deployment's pods
+  ports:
+    - port: 80              # service port (cluster-internal)
+      targetPort: 8000      # container port
+      nodePort: 30080       # external port (30000-32767)

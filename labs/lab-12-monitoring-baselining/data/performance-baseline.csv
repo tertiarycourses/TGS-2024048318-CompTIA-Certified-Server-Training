@@ -1,0 +1,12 @@
+Metric,Baseline,Warning_Threshold,Critical_Threshold
+CPU utilisation %,22,70,90
+CPU load (1m) per core,0.35,0.80,1.00
+Memory used %,48,80,92
+Swap used %,0,20,50
+Disk %util (data),18,70,90
+Disk IOPS (r+w),450,1200,1800
+Disk await ms,3,15,30
+Filesystem used % (/),41,80,90
+Inode used %,12,70,90
+Network rx Mbps,120,700,900
+Uptime days,180,-,-

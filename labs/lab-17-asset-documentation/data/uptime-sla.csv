@@ -1,0 +1,6 @@
+SLA_Uptime_%,Annual_Downtime,Monthly_Downtime,Tier_Example
+99,3 d 15 h 36 m,7 h 18 m,Best-effort internal
+99.9,8 h 45 m 36 s,43 m 49 s,Standard business
+99.95,4 h 22 m 48 s,21 m 54 s,Premium business
+99.99,52 m 33 s,4 m 23 s,High availability
+99.999,5 m 15 s,26 s,Carrier / five nines

@@ -1,0 +1,55 @@
+# k8s-ha-deployment.yaml — Lab 14, High Availability.
+# Kubernetes gives HA the same way HAProxy + keepalived do in this lab, but at
+# the orchestration layer: multiple replicas behind one load-balanced Service,
+# with self-healing when a pod dies. Apply on the Killercoda Kubernetes
+# playground (https://killercoda.com/playgrounds/scenario/kubernetes):
+#   kubectl apply -f k8s-ha-deployment.yaml
+#   kubectl get pods -l app=ha-web -o wide
+#   kubectl delete pod <one-pod>     # watch it self-heal back to 3 replicas
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ha-web
+  labels:
+    app: ha-web
+    course: tgs-2024048318
+spec:
+  replicas: 3                        # 3 backends = no single point of failure
+  selector:
+    matchLabels:
+      app: ha-web
+  template:
+    metadata:
+      labels:
+        app: ha-web
+    spec:
+      containers:
+        - name: web
+          image: nginx:1.27-alpine
+          ports:
+            - containerPort: 80
+          readinessProbe:            # only send traffic to healthy pods
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 5
+          livenessProbe:             # restart a pod that stops responding
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ha-web
+  labels:
+    app: ha-web
+spec:
+  type: LoadBalancer               # one virtual IP, load-balanced across pods
+  selector:
+    app: ha-web
+  ports:
+    - port: 80
+      targetPort: 80

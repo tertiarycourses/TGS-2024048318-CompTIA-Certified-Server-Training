@@ -15,3 +15,11 @@ courseare/
 
 # Build toolchain (skills, hooks, push scripts) — local only, not part of the published course
 .claude/
+
+# Lab asset generator (build tooling — local only)
+labs/__pycache__/
+labs/build_lab_assets.py
+labs/lab_assets_data.py
+
+# Superseded versions kept locally only — never pushed
+archive/

@@ -1,0 +1,9 @@
+VG,LV,Size,Filesystem,Mountpoint
+vg_data,lv_web,800M,ext4,/srv/web
+vg_data,lv_db,800M,xfs,/srv/db
+vg_data,lv_logs,500M,ext4,/var/log/app
+vg_data,lv_swap,200M,swap,[SWAP]
+vg_data,lv_web_snap,100M,snapshot,(of lv_web)
+vg_sys,lv_root,4G,ext4,/
+vg_sys,lv_home,2G,xfs,/home
+vg_sys,lv_var,3G,ext4,/var
